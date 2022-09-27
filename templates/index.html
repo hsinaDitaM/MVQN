@@ -4,11 +4,11 @@
 {% block body %}
     <!-- Start of body content specific to page -->
     <div class="px-5 py-5 mx-auto">
-        <h1 class="text-white"><strong>Python Home Page</strong></h1>
+        <h1 class="text-white"><strong>MVQN</strong></h1>
         <div class="row">
             <div class="col-4">
                 <div class="card">
-                    <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="250">
+                    <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
                     <div class="card-body">
                     <h5 class="card-title">What should <mark>Student Developers learn</mark>?</h5>
                     <p class="card-text">
@@ -26,7 +26,7 @@
             </div>
             <div class="col-4">
                 <div class="card">
-                    <img class="card-img-top" src="{{ url_for('static', filename='assets/flask.png') }}" alt="Flask Development" height="250">
+                    <img class="card-img-top" src="{{ url_for('static', filename='assets/flask.png') }}" alt="Flask Development" height="0">
                     <div class="card-body">
                     <h5 class="card-title">What is <mark>Flask</mark>? How do I start Web development?</h5>
                     <p class="card-text">
@@ -43,7 +43,7 @@
             </div>
             <div class="col-4">
                 <div class="card">
-                    <img class="card-img-top" src="{{ url_for('static', filename='assets/pythondb.png') }}" alt="Backend and Persistence" height="250">
+                    <img class="card-img-top" src="{{ url_for('static', filename='assets/pythondb.png') }}" alt="Backend and Persistence" height="0">
                     <div class="card-body">
                     <h5 class="card-title">How do you manage <mark>Persistent data</mark> with Python?</h5>
                     <p class="card-text">
@@ -59,6 +59,24 @@
                 </div>
             </div>
             
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
+            <div class="card-body">
+            <h5 class="card-title">Qais <mark>Jamili</mark></h5>
+            <p class="card-text">
+                <ol>
+                    <li>My name is Qais Jamili.</li>
+                    <li>I am 15 years old.</li>
+                    <li>I was born in Munich, Germany but I live in San Diego, California.</li>
+                    <li>I go to Del Norte higschool.</li>
+                    <li>Some of the things I like to do are; play rugby, play games, watch televison, hangout with my friends, be with my family, and enjoy nature.</li>
+                </ol>
+            </p>
+            <a href="#" class="btn btn-primary">Learn more</a>
+            </div>
         </div>
     </div>
 {% endblock %}
