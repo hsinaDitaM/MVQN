@@ -8,16 +8,9 @@
           background-color: rgb(148, 217, 221);
           border-radius: 10px;
         }
-        
         h5 {
           color: white;
           text-align: center;
-        }
-        
-        p {
-            color: rgba(255, 255, 255, 0.808);
-          font-family: verdana;
-          font-size: 20px;
         }
         li{
             color: rgba(255, 255, 255, 0.808);
@@ -29,12 +22,11 @@
           font-family: verdana;
           font-size: 20px;
         }
-        h1 {
-            color:rgba(255, 255, 255, 0)
-        }
         body {
-            background: url('https://cdn.discordapp.com/attachments/749785363215679638/1025947085620650025/unknown.png');
+            background-color: rgb(254, 243, 161);
             max-width: 100vw;
+            max-height: 100vh; 
+            background-size: cover;
         }
     </style>
     <div class="px-5">
@@ -53,44 +45,9 @@
                             <li>My Role is DevOps.</li>
                             <li>My hobbies are listening to music, Photography, and messing around with computers</li>
                             <li>I can code Python, HTML, and etc.</li>
-                            
                         </ol>
                     </p>
                     <a href="https://github.com/hsinaDitaM" class="btn btn-primary">Github Page</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ url_for('static', filename='assets/flask.png') }}" alt="Flask Development" height="0">
-                    <div class="card-body">
-                    <h5 class="card-title">What is <mark>Flask</mark>? How do I start Web development?</h5>
-                    <p class="card-text">
-                        <ol>
-                            <li>Flask Framework is the popular Web Application development framework of Python.</li>
-                            <li>Blueprint is utility to help abstract complexity, moving information in independent files and directories.</li>
-                            <li>HTML using Bootstrap is a great way to build interesting pages and reduce CSS</li>
-                            <li>Jinja2 is a server-side Python like template engine, supports HTML5 web development, and provides full integration with Flask.</li>
-                        </ol>
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ url_for('static', filename='assets/pythondb.png') }}" alt="Backend and Persistence" height="0">
-                    <div class="card-body">
-                    <h5 class="card-title">How do you manage <mark>Persistent data</mark> with Python?</h5>
-                    <p class="card-text">
-                        <ol>
-                            <li>A Database is an example of persistent data that is held on a computer.  Programming languages and frameworks allow you to store and retrive data.</li>
-                            <li>SQL stands for Structured Query Language · SQL lets you access and manipulate databases and has become a long lasting development standard.</li>
-                            <li>SQLAlchemy is the Python SQL toolkit and Object Relational Mapper (ORM) that gives application developers the full power and flexibility of SQL.</li>
-                            <li>There are many newer and sometimes easier Database languages and frameworks.  Mongo, DynamoDB, Neo4J are Databases being used by students developers in last 3 years.</li>
-                        </ol>
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -111,21 +68,60 @@
                     <a href="#" class="btn btn-primary">Learn more</a>
                     </div>
                 </div>
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
-                    <div class="card-body">
-                    <h5 class="card-title">What is <mark>snake?</mark></h5>
-                    <p class="card-text">
-                        <ol>
-                            <li>Snake is a video game.</li>
-                            <li>It involves a block which increases in size when it tocuhes red blocks (food).</li>
-                            <li>You are able to move the block with the arrow keys.</li>
-                            <li>The objective of the game is to increase in size as much as you can.</li>
-                            <li>If you hit yourself or hit a border you lose and restart the game.</li>
-                        </ol>
-                    </p>
-                    <a href="#" class="btn btn-primary">Learn more</a>
-                    </div>
+            </div>
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
+                <div class="card-body">
+                <h5 class="card-title">FirstName <mark>LastName</mark></h5>
+                <p class="card-text">
+                    <ol>
+                        <li>About</li>
+                        <li>About</li>
+                        <li>About</li>
+                        <li>About</li>
+                        <li>About</li>
+                    </ol>
+                </p>
+                <a href="#" class="btn btn-primary">Learn more</a>
                 </div>
+            </div>
+        </div> 
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
+                <div class="card-body">
+                <h5 class="card-title">FirstName <mark>LastName</mark></h5>
+                <p class="card-text">
+                    <ol>
+                        <li>About</li>
+                        <li>About</li>
+                        <li>About</li>
+                        <li>About</li>
+                        <li>About</li>
+                    </ol>
+                </p>
+                <a href="#" class="btn btn-primary">Learn more</a>
+                </div>
+            </div>
+        </div> 
+        <hr/>
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
+                <div class="card-body">
+                <h5 class="card-title">What is <mark>snake?</mark></h5>
+                <p class="card-text">
+                    <ol>
+                        <li>Snake is a video game.</li>
+                        <li>It involves a block which increases in size when it tocuhes red blocks (food).</li>
+                        <li>You are able to move the block with the arrow keys.</li>
+                        <li>The objective of the game is to increase in size as much as you can.</li>
+                        <li>If you hit yourself or hit a border you lose and restart the game.</li>
+                    </ol>
+                </p>
+                <a href="#" class="btn btn-primary">Learn more</a>
+                </div>
+            </div>
+        </div> 
 {% endblock %}
