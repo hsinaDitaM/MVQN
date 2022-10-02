@@ -28,24 +28,69 @@
             max-height: 100vh; 
             background-size: cover;
         }
+        .clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-370%);
+            color: rgb(148, 217, 221);
+            font-size: 50px;
+            font-family: verdana;
+            letter-spacing: 7px;
+        }
+        hr { 
+            color: rgb(148, 217, 221);
+        }
     </style>
     <div class="px-5">
         <h1><strong>MVQN</strong></h1>
-        <div class="row">
+        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+        <script>
+            function showTime(){
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            var session = "AM";
+            
+            if(h == 0){
+                h = 12;
+            }
+            
+            if(h > 12){
+                h = h - 12;
+                session = "PM";
+            }
+            
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+            
+            var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+            
+            setTimeout(showTime, 1000);
+            
+        }
+
+        showTime();
+        </script>
+        <div class="row"> 
             <div class="col-4">
                 <div class="card">
                     <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
                     <div class="card-body">
-                    <h5 class="card-title">Mati <mark>Danish</mark></h5>
+                    <h5 class="card-title"><b>Mati <mark>Danish</mark></b></h5>
                     <p class="card-text">
-                        <ol>
+                        <ul>
                             <li>My name is Mati Danish.</li>
                             <li>I am a junior.</li>
                             <li>I am 16 years old.</li>
                             <li>My Role is DevOps.</li>
                             <li>My hobbies are listening to music, Photography, and messing around with computers</li>
                             <li>I can code Python, HTML, and etc.</li>
-                        </ol>
+                        </ul>
                     </p>
                     <a href="https://github.com/hsinaDitaM" class="btn btn-primary">Github Page</a>
                     </div>
@@ -105,7 +150,7 @@
                 </div>
             </div>
         </div> 
-        <hr/>
+        <hr>
         <div class="col-4">
             <div class="card">
                 <img class="card-img-top" src="{{ url_for('static', filename='assets/python.jpeg') }}" alt="Python Development" height="0">
