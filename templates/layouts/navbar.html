@@ -10,6 +10,15 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
         font-family: 'verdana';
         letter-spacing: 7px;
     }
+    nav{
+       color:rgb(148, 217, 221);
+    }
+    h2{
+        color:rgba(148, 217, 221, 0);
+    }
+    h3{
+       color:rgb(148, 217, 221);
+    }
 
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,7 +28,11 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
+            <h2>_</h2>
+            <h3><i><strong>MVQN</strong></i></h3>
+            <h2>_</h2>
             <a class="nav-link" href={{ url_for('index') }}>Home</a>
+            <a class="nav-link" href=https://github.com/hsinaDitaM/MVQN>Github</a>
             <a class="nav-link" href={{ url_for('stub') }}>Stub</a>
         </div>
     </div>
