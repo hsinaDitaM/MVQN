@@ -5,20 +5,33 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
 <style>
     .clock {
         transform: translateX(-60%) translateY(-0%);
-        color: rgb(148, 217, 221);
+        color: #bab9b9;;
         font-size: 20px;
         font-family: 'verdana';
         letter-spacing: 2px;
     }
-    nav{
-       color:rgb(148, 217, 221);
-    }
     h2{
-        color:rgba(148, 217, 221, 0);
+        color:#00f2ff00;
     }
     h3{
-       color:rgb(148, 217, 221);
+        color: #bab9b9;
     }
+    .bg-light {
+    background-color: #1c1c1c!important;
+    }
+    strong{
+        color: #bab9b9;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #bab9b9;
+    }
+    .btn-primary {
+    color: #bab9b9;
+    background-color: #ffffff10;
+    border-color:  #ffffff10;
+}
+
 
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,14 +42,14 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
         <div class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
             <h2>_</h2>
-            <h3><i><strong>MVQN</strong></i></h3>
             <h2>_</h2>
             <a class="nav-link" href={{ url_for('index') }}>Home</a>
+            <a class="nav-link" href={{ url_for('stub') }}>Hangman</a>           
             <a class="nav-link" href=https://github.com/hsinaDitaM/MVQN>Github</a>
-            <a class="nav-link" href={{ url_for('stub') }}>Stub</a>
+
         </div>
     </div>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style= "width: 90%;">
+   <!-- <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style= "width: 90%;">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +63,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                 </ul>
             </li>
         </ul>
-    </div>
+    </div>       -->
 
     <div class="clock-container">
         <div id="MyClockDisplay" class="clock" onload="showTime()">03:49:01 PM</div>
@@ -60,7 +73,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
             var h = date.getHours(); // 0 - 23
             var m = date.getMinutes(); // 0 - 59
             var s = date.getSeconds(); // 0 - 59
-            var session = "AM";
+            var session = "";
             
             if(h == 0){
                 h = 12;
@@ -68,7 +81,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
             
             if(h > 12){
                 h = h - 12;
-                session = "PM";
+                session = "";
             }
             
             h = (h < 10) ? "0" + h : h;
