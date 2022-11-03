@@ -9,10 +9,17 @@
 HEAD
     
 
+<head>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
+</head>
 =======
     
     <style>
+
+          
+
         .card {
           background-color: rgb(51, 51, 51);
           border-radius: 10px;
@@ -50,6 +57,213 @@ HEAD
     }
     </style>
     <h5>Mati will be adding Hangman after he receives it from Nikhil</h5>
+
+    <body> 
+      <py-script>
+        import random 
+        PICS = ['''
+        +---+
+        |  |   
+          |
+          |
+          |
+          |
+          |
+        =========''', '''
+
+
+
+        +---+
+        |   |
+        O   |
+            |
+            |
+            |
+        =========''', '''
+
+
+        
+
+            +---+
+
+          |   |
+
+          O   |
+
+          |   |
+
+              |
+
+              |
+
+          =========''', '''
+
+        
+
+          +---+
+
+          |   |
+
+          O   |
+
+          /|   |
+
+              |
+
+              |
+
+        =========''', '''
+
+
+
+          +---+
+
+          |   |
+
+          O   |
+
+          /|\  |
+
+              |
+
+              |
+
+        =========''', '''
+
+
+
+          +---+
+
+          |   |
+
+          O   |
+
+          /|\  |
+
+          /    |
+
+              |
+
+        =========''', '''
+
+
+
+          +---+
+
+          |   |
+
+          O   |
+
+          /|\  |
+
+          / \  |
+
+              |
+
+        =========''']
+
+
+        words = 'hi hello how ant baboon happy pig soccer black blue red violet pink white bold confidence integrity fight sad pig elephant boy monkey phone computer qais vyaan mask '.split()
+
+
+        def getRandomWord(ListofWords):
+            # This function chooses one word randomly out of the list "words".
+            wordIndex = random.randint(0, len(ListofWords) - 1)
+            return ListofWords[wordIndex]
+        
+        def displayBoard(PICS, missedLetters, correctLetters, HangmanWord):
+              print(PICS[len(missedLetters)])
+              print()
+              print('Missed letters:', end=' ')
+              for letter in missedLetters:
+                  print(letter, end=' ')
+              print()
+              blanks = '_' * len(HangmanWord)
+              for i in range(len(HangmanWord)): # replace blanks with correctly guessed letters
+                  if HangmanWord[i] in correctLetters:
+                      blanks = blanks[:i] + HangmanWord[i] + blanks[i+1:]
+              for letter in blanks: # show the secret word with spaces in between each letter
+                  print(letter, end=' ')
+              print()
+        
+        
+        def getGuess(alreadyGuessed):
+              # Returns the letter the player entered. This function makes sure the player entered a single letter, and not something else.
+              while True:
+                  print('Guess a letter.')
+                  guess = input()
+                  guess = guess.lower()
+                  if len(guess) != 1:
+                      print('Please enter a single letter.')
+                  elif guess in alreadyGuessed:
+                      print('You have already guessed that letter. Choose again.')
+                  elif guess not in 'abcdefghijklmnopqrstuvwxyz':
+                      print('Please enter a LETTER.')
+                  else:
+                      return guess
+        
+        
+        
+        def playAgain():
+              # This function returns True if the player wants to play again, otherwise it returns False.
+              print('Do you want to play again? (yes or no)')
+              return input().lower().startswith('y')
+        
+        
+        
+        
+        print('H A N G M A N')
+        missedLetters = ''
+        correctLetters = ''
+        #HangmanWord holds a random word from the list of words as a variable. 
+        HangmanWord = getRandomWord(words)
+        gameIsDone = False
+        
+        
+        
+        while True:
+              displayBoard(PICS, missedLetters, correctLetters, HangmanWord)
+        
+        
+              # Let the player type in a letter.
+              guess = getGuess(missedLetters + correctLetters)
+              if guess in HangmanWord:
+                  correctLetters = correctLetters + guess
+        
+        
+                  # Check if the player has won
+                  foundAllLetters = True
+                  for i in range(len(HangmanWord)):
+                      if HangmanWord[i] not in correctLetters:
+                          foundAllLetters = False
+                          break
+                  if foundAllLetters:
+                      print('Yes! The secret word is "' + HangmanWord + '"! You have won!')
+                      gameIsDone = True
+              else:
+                  missedLetters = missedLetters + guess
+        
+        
+                  # Check if player has guessed too many times and lost
+                  if len(missedLetters) == len(PICS) - 1:
+                      displayBoard(PICS, missedLetters, correctLetters, HangmanWord)
+                      print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses, the word was "' + HangmanWord + '"')
+                      gameIsDone = True
+        
+        
+              # Ask the player if they want to play again (but only if the game is done).
+              if gameIsDone:
+                  if playAgain():
+                      missedLetters = ''
+                      correctLetters = ''
+                      gameIsDone = False
+                      HangmanWord = getRandomWord(words)
+                  else:
+                      break
+      </py-script>
+    </body>
+
+    
 >>>>>>> 9f398646ebf6be4e4c80e63ef99247fbe4c40461
 {% endblock %}
 
