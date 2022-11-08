@@ -10,16 +10,43 @@
 
 <!-- Setting up a block replacement to customize background to RINGS -->
 {% block background %}
-    <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/vanta.halo.min.js') }}"></script>
-    <script>
-        VANTA.HALO({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00
-        })
-    </script>
+<!DOCTYPE html>
+<body>
+    <h1>
+        Hacks
+    </h1>
+    <ul>
+        <li> Managing complexity </li>
+            <p>
+                The project that we will be coding is called hangman and we will use python in order to code this. We will impoart
+                random and the computer will auto generate a word from a dictionary file that we choose. It will choose a random 
+                word from the dictionary and will store it in the game. Then the player has to guess every word and if they guess wrong 
+                10-15 times then they will loose the game, but if they guess the letters correctly with less than 15 mistakes they will 
+                win the game. 
+            </p>
+        <li> Procedural Abstraction</li>
+            <p>
+                Some key objects of the user design would be getting an API contatining most of the words in the english dictionary
+                and then another person can make the code extract a random word from the dictionary for the game. After another person can
+                code the if statements of the player enetering the correct word and then it outputting the word into the game and then if 
+                the person inputs a wrong letter then it will show it is a wrong letter and subtract one from the count of errors.
+            </p>
+        <li> Algorithm implementation</li>
+            <p> Some key aspects of the project is first finidng an API from the website and then putting it into the code. 
+                The next step is to create a function in order to extract a random word from the API, and we can import random and then
+                do it from that
+                After we have to create a counter for the mistakes and write if a player gets a letter guessed wrong then subtract the counter
+                number by one and if the counter reaches 0, say "Game over"
+                After we will create if statements for if the player gets the letter correct and if he guessed all the letters before the counter
+                reaces 0, print the user wins the game.
+            </p>
+        <li> Testing</li>
+            <p> We will run the code and check for any errors and we will preform the code iteration and testing as we move on.
+                We will constantly run the lines to see if there are any errors with our code. If there are any errors we will fix them.
+                We can put our data of all the words in the API, the dictionary will come from the API. We can ensure quality because we will
+                use VSCode and import it to our fastapges and run the code and see if the quality is good. 
+            </p>
+    </ul>
+
+</body>
 {% endblock %}

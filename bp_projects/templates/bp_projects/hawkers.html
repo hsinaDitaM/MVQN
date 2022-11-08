@@ -2,7 +2,7 @@
 {% extends "layouts/project.html" %}
 
 <!-- Setting up variables to customize "project" details to be specific to hawkers -->
-{% set project = "Hawkers" %}
+{% set project = "ScrumBoard" %}
 {% set overview = "https://hawkers.nighthawkcodingsociety.com/aboutus" %}
 {% set scrumboard = "https://github.com/noyah81/p2ducks/projects/1" %}
 {% set repo = "https://github.com/noyah81/p2ducks" %}
@@ -10,18 +10,50 @@
 
 <!-- Setting up a block replacement to customize background to BIRDS -->
 {% block background %}
-    <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/vanta.net.min.js') }}"></script>
-    <script>
-        VANTA.NET({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00
-        })
-    </script>
+  
+<!DOCTYPE html>
+<head>
+    <h1>This is the Scrum Board!</h1>
+    <h3>Notes and suggestions from the teacher or partners</h3>
+    <ul>
+        <li>....</li>
+        <li>....</li>
+    </ul>
+</head>
+<body>
+    <ul>
+        <li>Scrum Master: Planning and working on the hangman project</li>
+        <li>Devops: This person will work on the user interference of the website and ensure vscode git process are working correctly and AWS is working properly.</li>
+        <li>Frontend: Working on the html and css of the hangman project and what the decoration is around it. </li>
+        <li>Backend: Working on the hangman project with the scrum master. </li>
+    </ul>
+    <table>
+        <tr>
+          <th>To-Do</th>
+          <th>Progress</th>
+          <th>Role</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+        <tr>
+          <td>Ernst Handel</td>
+          <td>Roland Mendel</td>
+          <td>Austria</td>
+        </tr>
+        <tr>
+          <td>Island Trading</td>
+          <td>Helen Bennett</td>
+          <td>UK</td>
+        </tr>
+</body>
+
+
 {% endblock %}
