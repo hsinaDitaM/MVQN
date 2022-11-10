@@ -4,6 +4,6 @@ jobs:
   AWS-Deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secrets.SSH_KEY \}\} | base64 -d > key.pem
+      - run: echo $\{\{ secrets.SSH_KEY \}\} | base64 -d > key.pem
       - run: chmod 400 key.pem
       - run: ssh -i key.pem -o StrictHostKeyChecking=no ubuntu@3.138.77.37 'cd ~/T8044_MVQN; git pull; docker-compose down; docker-compose up -d --build'

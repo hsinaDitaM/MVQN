@@ -5,6 +5,9 @@ from __init__ import app  # Definitions initialization
 from api import app_api # Blueprint import api definition
 from bp_projects.projects import app_projects # Blueprint directory import projects definition
 
+from pytz import timezone
+from datetime import datetime
+
 app.register_blueprint(app_api) # register api routes
 app.register_blueprint(app_projects) # register api routes
 
@@ -20,6 +23,23 @@ def index():
 @app.route('/stub/')  # connects /stub/ URL to stub() function
 def stub():
     return render_template("stub.html")
+
+@app.route('/api/clock/')
+def close_api():
+    timezones = {
+        "US": {
+            "Hawaii": datetime.now(tz=timezone('US/Hawaii')),
+            "Pacific": datetime.now(tz=timezone('US/Pacific')),
+            "Central": datetime.now(tz=timezone('US/Central')),
+            "Eastern": datetime.now(tz=timezone('US/Eastern')),
+        },
+        "Japan": {
+            "Tokyo": datetime.now(tz=timezone('Asia/Tokyo')),
+        },
+    }
+    # US/Pacific US/Pacific US/Eastern US/Hawaii
+
+    return timezones
 
 # this runs the application on the development server
 if __name__ == "__main__":
